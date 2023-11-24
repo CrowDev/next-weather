@@ -36,7 +36,7 @@ export default async function Dashboard() {
           <MainWeather currentConditions={currentConditions} />
           <WeatherByTime />
           <CurrentConditions />
-          <Forecast />
+          <Forecast cityKey={cityKey} />
         </main>
       </Suspense>
     </div>
