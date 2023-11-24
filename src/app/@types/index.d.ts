@@ -23,6 +23,23 @@ export type SystemValues = {
 }
 
 export type Forecast = {
+	Headline: Headline;
+	DailyForecasts: DailyForecast[];
+}
+
+export type Headline = {
+	EffectiveDate:      Date;
+	EffectiveEpochDate: number;
+	Severity:           number;
+	Text:               string;
+	Category:           string;
+	EndDate:            Date;
+	EndEpochDate:       number;
+	MobileLink:         string;
+	Link:               string;
+}
+
+export type DailyForecast = {
 	Date:        Date;
 	EpochDate:   number;
 	Temperature: Temperature;
