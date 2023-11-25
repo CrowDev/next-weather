@@ -19,7 +19,7 @@ export const Forecast = async ({ cityKey }: Props) => {
 	return (
 		<section className='row-span-full bg-slate-800 rounded-lg p-5'>
 			<span></span>
-			<ul className='grid grid-rows-5'>
+			<ul className='grid grid-rows-5 h-full'>
 				{
 					forecast.DailyForecasts.map((item: DailyForecast) => {
 						const icon = item.Day.Icon < 10 ? `0${item.Day.Icon}` : item.Day.Icon
