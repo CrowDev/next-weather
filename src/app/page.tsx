@@ -35,7 +35,7 @@ export default async function Dashboard() {
         <main className='grid grid-rows-[200px_150px_200px] grid-cols-[30%_70%] grid-flow-col gap-5'>
           <MainWeather currentConditions={currentConditions} />
           <WeatherByTime />
-          <CurrentConditions />
+          <CurrentConditions currentConditions={currentConditions} />
           <Forecast cityKey={cityKey} />
         </main>
       </Suspense>
