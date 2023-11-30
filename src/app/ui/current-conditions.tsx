@@ -5,11 +5,12 @@ interface Props {
 	currentConditions: TCurrentConditions
 }
 
-// divide this in 4 parts: wind, humidty, pressure, UV
+// divide this in 4 parts: humidty, UV
 export const CurrentConditions = ({currentConditions}: Props) => {
 
 	const windSourceIcon = `https://developer.accuweather.com/sites/default/files/32-s.png`
 	const precipSourceIcon = `https://developer.accuweather.com/sites/default/files/18-s.png`
+	const uvSourceIcon = `https://developer.accuweather.com/sites/default/files/01-s.png`
 	const { Wind } = currentConditions
 	const { Precip1hr } = currentConditions
 	return (
@@ -48,7 +49,22 @@ export const CurrentConditions = ({currentConditions}: Props) => {
 					</p>
 				</section>
 			</article>
-			<article className='bg-slate-800 rounded-lg'>CurrentConditions</article>
+			<article className='bg-slate-800 rounded-lg p-2'>
+				<section className='flex gap-2 min-h-[40px]'>
+					<p className='font-bold self-center'>
+						UV Index
+					</p>
+					<figure className='self-center'>
+						<Image src={uvSourceIcon} alt='wind icon' width={65} height={35} />
+					</figure>
+				</section>
+				<section>
+					<p className='flex gap-3'>
+						<span className='text-lg font-semibold'>{currentConditions.UVIndex}</span>
+						<small className='self-start font-medium'>{currentConditions.UVIndexText}</small>
+					</p>
+				</section>
+			</article>
 			<article className='bg-slate-800 rounded-lg'>CurrentConditions</article>
 		</section>
 	)
