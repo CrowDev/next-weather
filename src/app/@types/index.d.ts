@@ -7,6 +7,7 @@ export type CurrentConditions = {
 	PrecipitationType:        null;
 	IsDayTime:                boolean;
 	Temperature:              TemperatureSystem;
+	Wind:                     Wind;
 	MobileLink:               string;
 	Link:                     string;
 }
@@ -67,3 +68,18 @@ export type Imum = {
 	UnitType: number;
 }
 
+export type Wind = {
+	Direction: Direction;
+	Speed:     Speed;
+}
+
+export type Direction = {
+	Degrees:   number;
+	Localized: string;
+	English:   string;
+}
+
+export type Speed = {
+	Metric:   Imum;
+	Imperial: Imum;
+}
