@@ -9,6 +9,8 @@ export type CurrentConditions = {
 	Temperature:              TemperatureSystem;
 	Wind:                     Wind;
 	Precip1hr:                Precip1hr;
+	UVIndex:                  number;
+	UVIndexText:              string;
 	MobileLink:               string;
 	Link:                     string;
 }
