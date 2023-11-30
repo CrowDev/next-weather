@@ -8,6 +8,7 @@ export type CurrentConditions = {
 	IsDayTime:                boolean;
 	Temperature:              TemperatureSystem;
 	Wind:                     Wind;
+	Precip1hr:                Precip1hr;
 	MobileLink:               string;
 	Link:                     string;
 }
@@ -81,5 +82,9 @@ export type Direction = {
 
 export type Speed = {
 	Metric:   Imum;
+	Imperial: Imum;
+}
+export type Precip1hr = {
+	Metric:  Imum;
 	Imperial: Imum;
 }
