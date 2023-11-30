@@ -11,8 +11,10 @@ export const CurrentConditions = ({currentConditions}: Props) => {
 	const windSourceIcon = `https://developer.accuweather.com/sites/default/files/32-s.png`
 	const precipSourceIcon = `https://developer.accuweather.com/sites/default/files/18-s.png`
 	const uvSourceIcon = `https://developer.accuweather.com/sites/default/files/01-s.png`
+	const visibilitySourceIcon = `https://developer.accuweather.com/sites/default/files/11-s.png`
 	const { Wind } = currentConditions
 	const { Precip1hr } = currentConditions
+	const { Visibility } = currentConditions
 	return (
 		<section className='grid grid-rows-2 grid-cols-2 gap-3'>
 			<article className='bg-slate-800 rounded-lg p-2'>
@@ -65,7 +67,22 @@ export const CurrentConditions = ({currentConditions}: Props) => {
 					</p>
 				</section>
 			</article>
-			<article className='bg-slate-800 rounded-lg'>CurrentConditions</article>
+			<article className='bg-slate-800 rounded-lg p-2'>
+				<section className='flex gap-2 min-h-[40px]'>
+					<p className='font-bold self-center'>
+						Visibility
+					</p>
+					<figure className='self-center'>
+						<Image src={visibilitySourceIcon} alt='wind icon' width={65} height={35} />
+					</figure>
+				</section>
+				<section>
+					<p className='flex gap-3'>
+						<span className='text-lg font-semibold'>{Visibility.Metric.Value}</span>
+						<small className='self-start font-medium'>{Visibility.Metric.Unit}</small>
+					</p>
+				</section>
+			</article>
 		</section>
 	)
 }
