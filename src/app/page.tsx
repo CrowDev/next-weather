@@ -21,9 +21,9 @@ const cityFetching = async (cityName = '') => {
 }
 
 const currentConditionFetching = async (cityKey: string) => {
-  const ENDPOINT = `${BASE_URL}/currentconditions/v1/${cityKey}?apikey=${KEY}`
+  const ENDPOINT = `${BASE_URL}/currentconditions/v1/${cityKey}?apikey=${KEY}&details=true`
   const res = await fetch(ENDPOINT)
-  return res.json()
+  return await res.json()
 }
 
 export default async function Dashboard() {
