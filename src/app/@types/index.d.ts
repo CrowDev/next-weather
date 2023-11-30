@@ -11,6 +11,7 @@ export type CurrentConditions = {
 	Precip1hr:                Precip1hr;
 	UVIndex:                  number;
 	UVIndexText:              string;
+	Visibility:         		  Visibility;
 	MobileLink:               string;
 	Link:                     string;
 }
@@ -88,5 +89,10 @@ export type Speed = {
 }
 export type Precip1hr = {
 	Metric:  Imum;
+	Imperial: Imum;
+}
+
+export type Visibility = {
+	Metric:   Imum;
 	Imperial: Imum;
 }
