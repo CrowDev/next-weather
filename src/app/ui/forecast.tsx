@@ -17,6 +17,7 @@ interface Props {
 
 export const Forecast = async ({ cityKey }: Props) => {
 	const forecast: TForecast = await fetchForecast(cityKey)
+	console.log(forecast)
 	const getDateInfo = (item: DailyForecast) => {
 		const date = DateTime.fromMillis(item.EpochDate * 1000)
 		const day = date.day
@@ -60,35 +61,37 @@ export const Forecast = async ({ cityKey }: Props) => {
 									<span className='font-semibold text-xl'>/</span>
 									<span className='font-semibold text-xl'>{farenheitToCelsius(item.Temperature.Minimum.Value)}°</span>
 								</section>
-								<section className='flex gap-2'>
-									<div className='flex flex-col'>
-										<span>Day</span>
-										<span>{item.Day.IconPhrase}</span>
-									</div>
-									<figure>
-										<Image 
-												src={`https://developer.accuweather.com/sites/default/files/${icon}-s.png`}
-												alt='Wheather day icon'
-												width={75}
-												height={45}
-												style={{objectFit: 'none'}}
-												/>
-									</figure>
-								</section>
-								<section className='flex gap-2'>
-									<div>
-										<span>Night</span>
-										<span>{item.Night.IconPhrase}</span>
-									</div>
-									<figure>
-										<Image 
-												src={`https://developer.accuweather.com/sites/default/files/${nightIcon}-s.png`}
-												alt='Wheather day icon'
-												width={75}
-												height={45}
-												style={{objectFit: 'none'}}
-												/>
-									</figure>
+								<section className='flex flex-col gap-2'>
+									<article className='flex'>
+										<div className='flex flex-col'>
+											<span>Day</span>
+											<span>{item.Day.IconPhrase}</span>
+										</div>
+										<figure>
+											<Image 
+													src={`https://developer.accuweather.com/sites/default/files/${icon}-s.png`}
+													alt='Wheather day icon'
+													width={75}
+													height={45}
+													style={{objectFit: 'none'}}
+													/>
+										</figure>
+									</article>
+									<article className='flex'>
+										<div className='flex flex-col'>
+											<span>Night</span>
+											<span>{item.Night.IconPhrase}</span>
+										</div>
+										<figure>
+											<Image 
+													src={`https://developer.accuweather.com/sites/default/files/${nightIcon}-s.png`}
+													alt='Wheather day icon'
+													width={75}
+													height={45}
+													style={{objectFit: 'none'}}
+													/>
+										</figure>
+									</article>
 								</section>
 							</article>
 						</li>
