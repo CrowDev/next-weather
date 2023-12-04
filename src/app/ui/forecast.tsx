@@ -48,7 +48,7 @@ export const Forecast = async ({ cityKey }: Props) => {
 						return (
 						<li key={item.EpochDate}>
 							<article className='flex h-full gap-5 items-center'>
-								<section className='flex flex-col gap-1'>
+								<section className='flex flex-col gap-1 min-w-[50px]'>
 									<div className='font-bold text-xl'>
 										{weekDay}
 									</div>
@@ -56,7 +56,7 @@ export const Forecast = async ({ cityKey }: Props) => {
 										{day}/{month}
 									</div>
 								</section>
-								<section className='flex gap-2'>
+								<section className='flex gap-2 min-w-[130px]'>
 									<span className='font-bold text-3xl'>{farenheitToCelsius(item.Temperature.Maximum.Value)}°</span>
 									<span className='font-semibold text-xl'>/</span>
 									<span className='font-semibold text-xl'>{farenheitToCelsius(item.Temperature.Minimum.Value)}°</span>
@@ -79,7 +79,7 @@ export const Forecast = async ({ cityKey }: Props) => {
 									</article>
 									<article className='flex'>
 										<div className='flex flex-col'>
-											<span>Night</span>
+											<span className='font-medium'>Night</span>
 											<span>{item.Night.IconPhrase}</span>
 										</div>
 										<figure>
