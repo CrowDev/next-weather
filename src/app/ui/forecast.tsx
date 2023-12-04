@@ -46,7 +46,7 @@ export const Forecast = async ({ cityKey }: Props) => {
 							weekDay
 						} = getDateInfo(item)
 						return (
-						<li key={item.EpochDate}>
+						<li key={item.EpochDate} className='gap-3'>
 							<article className='flex h-full gap-5 items-center'>
 								<section className='flex flex-col gap-1 min-w-[50px]'>
 									<div className='font-bold text-xl'>

@@ -26,13 +26,15 @@ export const CurrentConditions = ({currentConditions}: Props) => {
 						<Image src={windSourceIcon} alt='wind icon' width={65} height={35} />
 					</figure>
 				</section>
-				<section>
+				<section className='flex flex-col'>
 					<p className='flex gap-3'>
 						<span className='text-lg font-semibold'>{Wind.Speed.Metric.Value}</span>
 						<small className='self-start font-medium'>{Wind.Speed.Metric.Unit}</small>
+					</p>
+					<p className='flex gap-3'>
 						<span className='text-lg font-semibold'>{Wind.Direction.Degrees}</span>
 						<small className='self-start font-medium'>{Wind.Direction.Localized}</small>
-						</p>
+					</p>
 				</section>
 			</article>
 			<article className='bg-slate-800 rounded-lg p-2'>
@@ -46,7 +48,7 @@ export const CurrentConditions = ({currentConditions}: Props) => {
 				</section>
 				<section>
 					<p className='flex gap-3'>
-						<span className='text-lg font-semibold'>{Precip1hr.Metric.Value}</span>
+						<span className='text-3xl font-semibold'>{Precip1hr.Metric.Value}</span>
 						<small className='self-start font-medium'>{Precip1hr.Metric.Unit}</small>
 					</p>
 				</section>
@@ -62,7 +64,7 @@ export const CurrentConditions = ({currentConditions}: Props) => {
 				</section>
 				<section>
 					<p className='flex gap-3'>
-						<span className='text-lg font-semibold'>{currentConditions.UVIndex}</span>
+						<span className='text-3xl font-semibold'>{currentConditions.UVIndex}</span>
 						<small className='self-start font-medium'>{currentConditions.UVIndexText}</small>
 					</p>
 				</section>
@@ -78,7 +80,7 @@ export const CurrentConditions = ({currentConditions}: Props) => {
 				</section>
 				<section>
 					<p className='flex gap-3'>
-						<span className='text-lg font-semibold'>{Visibility.Metric.Value}</span>
+						<span className='text-3xl font-semibold'>{Visibility.Metric.Value}</span>
 						<small className='self-start font-medium'>{Visibility.Metric.Unit}</small>
 					</p>
 				</section>
