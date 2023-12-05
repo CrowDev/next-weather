@@ -26,15 +26,22 @@ const currentConditionFetching = async (cityKey: string) => {
   return await res.json()
 }
 
+const hourlyForecastFetching = async (cityKey: string) => {
+  const ENDPOINT = `${BASE_URL}forecasts/v1/hourly/12hour/${cityKey}?apikey=${KEY}&details=true&metric=true`
+  const res = await fetch(ENDPOINT)
+  return await res.json()
+}
+
 export default async function Dashboard() {
   const cityKey = await cityFetching('New York')
   const [currentConditions]: TCurrentConditions[] = await currentConditionFetching(cityKey)
+  const hourlyForecast = await hourlyForecastFetching(cityKey)
   return (
     <div>
       <Suspense fallback={<Loading />}>
         <main className='grid grid-rows-[200px_150px_1fr] grid-cols-[30%_70%] grid-flow-col gap-5'>
           <MainWeather currentConditions={currentConditions} />
-          <WeatherByTime />
+          <WeatherByTime hourlyForecast={hourlyForecast} />
           <CurrentConditions currentConditions={currentConditions} />
           <Forecast cityKey={cityKey} />
         </main>
