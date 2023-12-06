@@ -17,7 +17,6 @@ interface Props {
 
 export const Forecast = async ({ cityKey }: Props) => {
 	const forecast: TForecast = await fetchForecast(cityKey)
-	console.log(forecast)
 	const getDateInfo = (item: DailyForecast) => {
 		const date = DateTime.fromMillis(item.EpochDate * 1000)
 		const day = date.day
