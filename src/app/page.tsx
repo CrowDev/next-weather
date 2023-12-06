@@ -39,7 +39,7 @@ export default async function Dashboard() {
   return (
     <div>
       <Suspense fallback={<Loading />}>
-        <main className='grid grid-rows-[200px_150px_1fr] grid-cols-[30%_70%] grid-flow-col gap-5'>
+        <main className='grid grid-rows-[200px_200px_1fr] grid-cols-[30%_70%] grid-flow-col gap-5'>
           <MainWeather currentConditions={currentConditions} />
           <WeatherByTime hourlyForecast={hourlyForecast} />
           <CurrentConditions currentConditions={currentConditions} />
